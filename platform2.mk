@@ -31,6 +31,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(SONY_ROOT)/system/etc/sec_config:system/etc/sec_config
 
+ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=smd
+    qcom.bluetooth.soc=smd \
+    ro.qualcomm.bluetooth.opp=true \
+    ro.qualcomm.bluetooth.hfp=true \
+    ro.qualcomm.bluetooth.hsp=true \
+    ro.qualcomm.bluetooth.pbap=true \
+    ro.qualcomm.bluetooth.ftp=true \
+    ro.qualcomm.bluetooth.map=true \
+    ro.qualcomm.bluetooth.nap=true \
+    ro.bluetooth.sap=false \
+    ro.bluetooth.dun=false \
+    ro.bluetooth.hfp.ver=1.7
+endif
