@@ -80,4 +80,7 @@ TARGET_SYSTEM_PROP += $(PLATFORM_COMMON_PATH)/system.prop
 # SELinux
 BOARD_SEPOLICY_DIRS += $(PLATFORM_COMMON_PATH)/sepolicy
 
+# RIL
+BOARD_RIL_CLASS := ../../../$(PLATFORM_COMMON_PATH)/ril/
+
 include device/sony/common-aosp/CommonConfig.mk
